@@ -167,12 +167,16 @@
       const quantite = document.getElementById('quantite').value;
       const message = document.getElementById('message').value;
 
-      const sujet = encodeURIComponent("Nouvelle commande de vin");
-      const corps = encodeURIComponent(
-        `Nom : ${nom}\nTéléphone : ${telephone}\nVin : ${vin}\nQuantité : ${quantite}\n\nAdresse ou message : ${message}`
-      );
+      const texte = `🍷 Nouvelle commande de vin 🍷%0A` +
+                    `Nom : ${nom}%0A` +
+                    `Téléphone : ${telephone}%0A` +
+                    `Vin choisi : ${vin}%0A` +
+                    `Quantité : ${quantite} bouteille(s)%0A` +
+                    `Adresse ou message : ${message}`;
 
-      window.location.href = `mailto:madidaginettegraceyode@gmail.com?subject=${sujet}&body=${corps}`;
+      const numeroWhatsApp = "2250153864606"; // Remplace par ton numéro WhatsApp
+      const lien = `https://wa.me/${numeroWhatsApp}?text=${texte}`;
+      window.open(lien, '_blank');
     }
   </script>
 
